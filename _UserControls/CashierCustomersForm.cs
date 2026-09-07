@@ -1,13 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace Sales_Inventory_Management
 {
@@ -16,7 +9,6 @@ namespace Sales_Inventory_Management
         public CashierCustomersForm()
         {
             InitializeComponent();
-
             displayCustomers();
         }
 
@@ -33,9 +25,7 @@ namespace Sales_Inventory_Management
         public void displayCustomers()
         {
             CustomersData cData = new CustomersData();
-
-            List<CustomersData> listData = cData.allCustomers();
-
+            List<CustomersData> listData = cData.AllCustomers();
             allCustomers_dgv.DataSource = listData;
         }
     }

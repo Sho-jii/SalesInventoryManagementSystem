@@ -1,4 +1,4 @@
-﻿namespace Sales_Inventory_Management
+namespace Sales_Inventory_Management
 {
     partial class Login
     {
@@ -221,7 +221,7 @@
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(169, 19);
             this.guna2HtmlLabel2.TabIndex = 79;
-            this.guna2HtmlLabel2.Text = "Already have an account?";
+            this.guna2HtmlLabel2.Text = "Don\'t have an account?";
             // 
             // txtlogin
             // 
