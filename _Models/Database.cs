@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -53,9 +53,28 @@ namespace Sales_Inventory_Management
             return new SqlConnection(GetConnectionString());
         }
 
+        public static bool IsDesignMode()
+        {
+            if (System.ComponentModel.LicenseManager.UsageMode == System.ComponentModel.LicenseUsageMode.Designtime)
+                return true;
+            try
+            {
+                string process = System.Diagnostics.Process.GetCurrentProcess().ProcessName;
+                if (process.IndexOf("devenv", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    process.IndexOf("design", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    return true;
+                }
+            }
+            catch { }
+            return false;
+        }
+
         public static DataTable ExecuteQuery(string query, Dictionary<string, object> parameters = null)
         {
             DataTable dt = new DataTable();
+            if (IsDesignMode()) return dt;
+
             using (SqlConnection conn = GetConnection())
             {
                 using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -79,6 +98,8 @@ namespace Sales_Inventory_Management
 
         public static int ExecuteNonQuery(string query, Dictionary<string, object> parameters = null)
         {
+            if (IsDesignMode()) return 0;
+
             using (SqlConnection conn = GetConnection())
             {
                 conn.Open();
@@ -98,6 +119,8 @@ namespace Sales_Inventory_Management
 
         public static object ExecuteScalar(string query, Dictionary<string, object> parameters = null)
         {
+            if (IsDesignMode()) return null;
+
             using (SqlConnection conn = GetConnection())
             {
                 conn.Open();

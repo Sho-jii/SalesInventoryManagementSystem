@@ -14,6 +14,7 @@ namespace Sales_Inventory_Management
         public AdminAddProducts()
         {
             InitializeComponent();
+            if (Database.IsDesignMode()) return;
             displayAllProducts();
             displayAllCategories();
         }

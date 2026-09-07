@@ -18,6 +18,7 @@ namespace Sales_Inventory_Management
         public CashierOrder()
         {
             InitializeComponent();
+            if (Database.IsDesignMode()) return;
             displayAllAvailableProducts();
             displayAllCategories();
             displayOrders();

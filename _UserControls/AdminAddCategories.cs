@@ -12,6 +12,7 @@ namespace Sales_Inventory_Management
         public AdminAddCategories()
         {
             InitializeComponent();
+            if (Database.IsDesignMode()) return;
             displayCategoriesData();
         }
 

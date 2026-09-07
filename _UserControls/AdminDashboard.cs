@@ -11,6 +11,7 @@ namespace Sales_Inventory_Management
         public AdminDashboard()
         {
             InitializeComponent();
+            if (Database.IsDesignMode()) return;
             displayAllTodayCustomers();
             displayAllCashier();
             displayAllAdmin();

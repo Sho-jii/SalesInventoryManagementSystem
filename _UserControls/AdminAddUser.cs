@@ -13,6 +13,7 @@ namespace Sales_Inventory_Management
         public AdminAddUser()
         {
             InitializeComponent();
+            if (Database.IsDesignMode()) return;
             displayAllUsersData();
         }
 

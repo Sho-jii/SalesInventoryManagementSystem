@@ -9,6 +9,7 @@ namespace Sales_Inventory_Management
         public CashierCustomersForm()
         {
             InitializeComponent();
+            if (Database.IsDesignMode()) return;
             displayCustomers();
         }
 
