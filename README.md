@@ -117,3 +117,6 @@ The system relies on five relational tables in SQL Server:
 **Jarib**
 - GitHub: [@Sho-jii](https://github.com/Sho-jii)
 - Portfolio / Commissioned Projects: *C# .NET Desktop Applications, POS Systems & Database Architectures*
+
+## 📄 License
+This project is open-source and available under the [MIT License](LICENSE).
